@@ -1,0 +1,37 @@
+#include "BlocksWorld.h"
+#include "AStar.h"
+
+
+int main(int argc, char **argv) {
+    if (argc!=3) {
+	std::cout<<"Usage: ./main [#stacks] [#blocks]"<<std::endl;
+	return 1;
+    }
+
+    int srcStack = 0;
+    int dstStack = 0;
+    
+    State startNode(atoi(argv[1]), atoi(argv[2]), 2);
+    State goalNode(atoi(argv[1]), atoi(argv[2]), 1);
+
+    std::cout<<"Goal state:"<<std::endl;
+    goalNode.printState();
+    std::cout<<std::endl;
+
+    std::cout<<"Start state:"<<std::endl;
+    std::cout<<"H(goal): "<<startNode.H(goalNode)<<std::endl;
+    startNode.printState();
+    std::cout<<std::endl;
+
+    while (startNode.isSame(goalNode) == false) {
+	std::cout<<"next move: ";
+	std::cin>>srcStack>>dstStack;
+	startNode.move(srcStack-1, dstStack-1);
+	std::cout<<"H(goal): "<<startNode.H(goalNode)<<std::endl;
+	startNode.printState();
+    }
+    std::cout<<"you win..."<<std::endl;
+
+    return 0;
+}
+

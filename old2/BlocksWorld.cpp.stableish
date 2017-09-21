@@ -1,0 +1,115 @@
+#include "BlocksWorld.h"
+
+/******************************************
+ * Constructor to create proper stack structure.
+ * nS = # of stacks, nB = # of blocks.
+ * The flag business: 0 is leave things be, 
+ * 1 is to initialize (goal state),
+ * 2 is to scramble it up.
+ ******************************************/
+State::State(int nS, int nB, int flag) {
+    nStacks = nS; 
+    nBlocks = nB;
+
+    if (flag>0) {
+	// Probably a better way to dynamically allocate empty 2d vec...
+	for (int i=0; i<nStacks; i++) {
+	    state.push_back({0});
+	    state[i].clear();
+	}
+	for (int i=0; i<nBlocks; i++) {
+	    state[0].push_back(i);
+	}
+    }
+    if (flag==2) {
+	scramble();
+    }
+}
+
+/******************************************
+ * Move last element of source stack to the 
+ * end of the destination stack
+ * We'll return a bool to let us know if
+ * the move is valid.
+ ******************************************/
+bool State::move(int srcStack, int dstStack) {
+    if ((srcStack<0) | (srcStack>nStacks) | (dstStack<0) | (dstStack>nStacks)) {
+	//std::cout<<"bad inputs"<<std::endl;
+	return false;
+    }
+    if (state[srcStack].empty()) {
+	//std::cout<<"source stack empty"<<std::endl;
+	return false;
+    }
+    state[dstStack].push_back(state[srcStack].back());
+    state[srcStack].pop_back();
+    return true;
+}
+
+/******************************************
+ * Randomize start position
+ ******************************************/
+void State::scramble() {
+    int r1, r2;
+    srand(time(0));
+    for (int i=0; i<SCRAMBLE; i++) {
+	r1 = rand()%nStacks;
+	r2 = rand()%nStacks;
+	move(r1, r2);
+    }
+}
+
+/******************************************
+ * Check if two states are the same (goal testing)
+ ******************************************/
+bool State::isSame(State &someState) {
+    if (state == someState.state)
+	return true;
+    return false;
+}
+
+/******************************************
+ * Generate possible successors
+ ******************************************/
+void State::getChildren() {
+}
+
+/******************************************
+ * Heuristic: this one just counts blocks 
+ * out of place.
+ ******************************************/
+int State::H(State &goalState) {
+    int in = 0; // in place blocks
+    int out = nBlocks; // out of place
+    for (int i=0; i<state[0].size(); i++) {
+	if (state[0][i] == i) {
+	    in++;
+	}
+    }
+    out -= in;
+    return out;
+}
+
+/******************************************
+ * Cost (total) of moving to child node. In
+ * BlocksWorld, this is 1 I think...
+ ******************************************/
+int State::Cost(State *child) {
+	return 1;
+}
+
+/******************************************
+ * Print out the current state of the 'blocks'
+ * in the example format
+ ******************************************/
+void State::printState() {
+    for (int i=0; i<state.size(); i++) {
+	std::cout<<i+1<<" | ";
+	for (int j=0; j<state[i].size(); j++) {
+	    std::cout<<state[i][j]+1<<" ";
+	}
+	std::cout<<std::endl;
+    }
+}
+
+

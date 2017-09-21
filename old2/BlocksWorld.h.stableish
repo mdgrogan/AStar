@@ -1,0 +1,37 @@
+#ifndef BLOCKSWORLD_H
+#define BLOCKSWORLD_H
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cstdlib>
+
+#define SCRAMBLE 1000
+
+class Node {
+    public:
+	Node(int nS, int nB, int flag);
+	bool isSame(Node &someState);	// Check if current is goal state
+	void getChildren();		// We'll see
+	int H(Node &goalState);		// Heuristic
+	int G(Node *child);		// Path cost
+	int F();			// Estimated total cost
+	bool operator<(const Node &lhs, const Node &rhs);
+
+	bool move(int srcStack, int dstStack);
+
+	void printState();		// Visualize
+	
+	int g;
+	int f;
+	Node *parent;
+	std::priority_queue<Node*, std::vector<int>, std::greater<int> > children;
+	std::vector<std::vector<int>> state;
+
+    private:
+	~Node();
+//	void move(int srcStack, int dstStack);
+	void scramble();
+
+	int nStacks, nBlocks;	
+};
+#endif //BLOCKSWORLD_H
