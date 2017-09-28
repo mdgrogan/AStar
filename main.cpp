@@ -2,14 +2,14 @@
 
 
 int main(int argc, char **argv) {
-    if (argc!=3) {
-	std::cout<<"Usage: ./main [#stacks] [#blocks]"<<std::endl;
+    if (argc!=4) {
+	std::cout<<"Usage: ./main [#searches] [#stacks] [#blocks]"<<std::endl;
 	return 1;
     }
     
-    int ret;
-    int numStacks = atoi(argv[1]);
-    int numBlocks = atoi(argv[2]);
+    int numSearch = atoi(argv[1]);
+    int numStacks = atoi(argv[2]);
+    int numBlocks = atoi(argv[3]);
     
     AStar aStar;
     State startState;
@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     }
     for (int i=0; i<numBlocks; i++) {
 	goalState.blockState[0].push_back(i);
-        startState.blockState[0].push_back(i);
+//        startState.blockState[0].push_back(i);
     }
     startState.scramble();
     //-------------------------------------------
@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
     startState.printState();
     
     aStar.init(startState, goalState);
-    ret = aStar.search(1000);  
+    aStar.search(numSearch);  
     return 0;
 }
 

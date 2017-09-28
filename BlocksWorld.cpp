@@ -18,8 +18,6 @@ bool State::isMove(int srcStack, int dstStack) {
 	//std::cout<<"source stack empty"<<std::endl;
 	return false;
     }
-    //blockState[dstStack].push_back(blockState[srcStack].back());
-    //blockState[srcStack].pop_back();
     return true;
 }
 
@@ -38,12 +36,19 @@ void State::move(int srcStack, int dstStack) {
  ******************************************/
 void State::scramble() {
     int r1, r2;
+    std::vector<int> x;
+    for (int i=0; i<nBlocks; i++) {
+	x.push_back(i);
+    }
+    for (int i=0; i<blockState.size(); i++) {
+	blockState[i].clear();
+    }
     srand(time(0));
-    for (int i=0; i<SCRAMBLE; i++) {
+    for (int i=0; i<nBlocks; i++) {
 	r1 = rand()%nStacks;
-	r2 = rand()%nStacks;
-	if (isMove(r1, r2))
-	    move(r1, r2);
+	r2 = rand()%x.size();
+	blockState[r1].push_back(x[r2]);
+	x.erase(x.begin()+r2);
     }
 }
 
@@ -68,6 +73,7 @@ void State::getChildren(AStar *astar) {
     NewState.nBlocks = nBlocks;
     NewState.blockState = blockState;
     
+    // Not optimized...
     for (int i=0; i<nStacks; i++) {
 	for (int j=0; j<nStacks; j++) {
 	    if (isMove(i, j)) {
@@ -80,20 +86,45 @@ void State::getChildren(AStar *astar) {
 }
 
 /******************************************
+ * Heuristic: this one counts blocks 
+ * out of place and adds two steps if
+ * a lesser block is not at the top of a stack
+ ******************************************/
+int State::H(State &goalState) {
+    int count = nBlocks+1;
+    for (int i=0; i<blockState[0].size(); i++) {
+	if (blockState[0][i] == i) {
+	    count--;
+	}
+    }
+    for (int i=1, maxi=blockState.size(); i<maxi; i++) {
+	for (int j=0, maxj=blockState[i].size(); j<maxj; j++) {
+	    if (maxj == 1) {
+		continue;	
+	    }
+	    if (j-1 > 0) {
+		if (blockState[i][j-1] < blockState[i][j]) {
+		    count += 2;
+		}
+	    }
+	}
+    }
+    return count;
+}
+/******************************************
  * Heuristic: this one just counts blocks 
  * out of place.
  ******************************************/
+/* H1
 int State::H(State &goalState) {
-    int in = 0; // in place blocks
     int out = nBlocks; // out of place
     for (int i=0; i<blockState[0].size(); i++) {
 	if (blockState[0][i] == i) {
-	    in++;
+	    out--;
 	}
     }
-    out -= in;
     return out;
-}
+}*/
 
 /******************************************
  * Cost (total) of moving to child node. In

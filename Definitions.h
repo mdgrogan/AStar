@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <climits>
 
-#define SCRAMBLE 1000
+#define SCRAMBLE 10000
 
 class AStar;
 
@@ -31,7 +31,7 @@ class State {
 #define LARGENUM 10000
 class Node {
     public:
-	Node() : g(LARGENUM) {};
+	Node() : g(LARGENUM), parent(NULL) {};
 	Node *parent;
 	Node *child;
 	State state; 
@@ -39,6 +39,7 @@ class Node {
 	int f;
 	int g;
 	int h;
+	int depth;
 };
 struct compareNodePtrs {
     bool operator() (const Node *lhs, const Node *rhs) {

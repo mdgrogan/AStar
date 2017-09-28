@@ -1,25 +1,13 @@
 #include <algorithm>
 #include "Definitions.h"
-/*
-class AStar {
-    public:
-	void init(State &startState, State &goalState);
-	bool addChild(State &s, int srcStack, int dstStack); 
-	int search(int maxSteps);
-	void reconstructPath();
-    
-	Node start;
-	Node goal;
-	std::priority_queue<Node, std::vector<Node>, greaterThan> frontier;
-	std::vector<Node> visited;
-	std::vector<Node> children;
-    private:
-	void printSearchState();
-	bool isVisited(Node n);
-};
-*/
+
+/******************************************
+ * Allocate and delete nodes 
+ ******************************************/
 Node* AStar::newNode() {
     Node *n = new Node;
+    if (!n)
+	exit(0);
     return n;
 }
 
@@ -31,7 +19,6 @@ void AStar::freeNode(Node *n) {
  * Set starting and goal nodes 
  ******************************************/
 void AStar::init(State &startState, State &goalState) {
-//    std::cout<<"entering init()"<<std::endl;
     start = newNode();
     goal = newNode();
     start->state = startState;
@@ -41,29 +28,32 @@ void AStar::init(State &startState, State &goalState) {
     start->g = 0;
     start->h = start->state.H(goal->state);
     start->f = start->g + start->h;
+    start->depth = 0;
     // Add start node to frontier
-//    std::cout<<"init(1)"<<std::endl;
     frontier.push(start);
-//    std::cout<<"exiting init()"<<std::endl;
 }
 
 /******************************************
  * This will be called from State::getChildren
+ * Adds child node with the passed parameters.
+ * It's a little obtuse...
  ******************************************/
 bool AStar::addChild(State &s, int srcStack, int dstStack) {
-//    std::cout<<"entering addChild()"<<std::endl;
     Node *n = newNode();
     if (!n) {
 	return false;
     }
     n->state = s;
     n->state.move(srcStack, dstStack);
-	//n->state.printState();
     children.push_back(n);
-//    std::cout<<"exiting addChild()"<<std::endl;
     return true;
 }
 
+/******************************************
+ * Check if node has been visited and, if so,
+ * is it better than the previously visited 
+ * node. If so, return true.
+ ******************************************/
 bool AStar::isBetterPath(Node *n, int tmpG) {
     for (int i=0; i<visited.size(); i++) {
 	if (n->state.isSame(visited[i]->state)) {
@@ -75,65 +65,67 @@ bool AStar::isBetterPath(Node *n, int tmpG) {
     return false;
 }
 
+/******************************************
+ * Reconstruct (and print) path from current
+ * node to root. 
+ ******************************************/
 void AStar::reconstructPath(Node *current) {
     while (current->parent != NULL) {
 	goalPath.push_back(current);
 	current = current->parent;
     }
+    // root node will have no parent
+    goalPath.push_back(current); 
     std::cout<<"Path:"<<std::endl;
     for (int i=goalPath.size()-1; i>=0; i--) {
 	goalPath[i]->state.printState();
     }
 }
 
+/******************************************
+ * Print search parameters associated with 
+ * current node. 
+ ******************************************/
 void AStar::printSearchState(Node *current) {
     std::cout<<"Step="<<step<<", ";
     std::cout<<"Queue="<<frontier.size()<<", ";
     std::cout<<"f="<<current->f
 	<<", g="<<current->g
 	<<", h="<<current->h
+	<<", depth="<<current->depth
 	<<std::endl;
 }
 
+/******************************************
+ * Main a* search. 
+ ******************************************/
 int AStar::search(int maxSteps) {
     step = 0;
-//    std::cout<<"entering Search()"<<std::endl;
     while (!frontier.empty() && step != maxSteps) {
-
 	// clear children list
 	children.clear();
-	//
+	
 	// current node is best in frontier
 	Node *current = frontier.top();
 
-//    std::cout<<"Search(1)"<<std::endl;
 	// goal test
 	if (current->state.isSame(goal->state)) {
 	    visited.clear();
 	    std::cout<<"Found goal"<<std::endl;
+	    printSearchState(current);
 	    reconstructPath(current);
 	    return step;
 	}
 	
-//    std::cout<<"Search(2)"<<std::endl;
 	// at current, so add to visited list
-
 	frontier.pop();
 	visited.push_back(current);
 
-//    std::cout<<"Search(3)"<<std::endl;
-
-
-//    std::cout<<"Search(4)"<<std::endl;
 	// find possible child nodes
 	current->state.getChildren(this);
 
-//    std::cout<<"Search(5)"<<std::endl;
 	for (int i=0; i<children.size(); i++) {
 	    int tmpG = current->g + current->state.G();
-
-
-//    std::cout<<"Search(6)"<<std::endl;
 
 	    // check visited list if child is on it or has
 	    // more expensive path
@@ -141,32 +133,16 @@ int AStar::search(int maxSteps) {
 		continue;
 	    }
 	    
-//    std::cout<<"Search(7)"<<std::endl;
 	    // discovered new node
 	    children[i]->parent = current;
-//	    std::cout<<"test\n";
-//	    current->state.printState();
-//	    children[i]->state.printState();
-
 	    children[i]->g = tmpG;
 	    children[i]->h = children[i]->state.H(goal->state);
 	    children[i]->f = children[i]->g + children[i]->h;
+	    children[i]->depth = current->depth + 1;
 	    frontier.push(children[i]);
 	}
-	printSearchState(current);
+	//printSearchState(current);
 	step++;
     }
     return -1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
