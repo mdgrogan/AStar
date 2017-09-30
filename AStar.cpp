@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <stdio.h>
 #include "Definitions.h"
 
 /******************************************
@@ -97,22 +98,42 @@ void AStar::printSearchState(Node *current) {
 }
 
 /******************************************
+ * Print search stuff to file
+ ******************************************/
+void AStar::printFile(Node *current) {
+    /* gotta love c i/o */
+    FILE *fp;
+    fp = fopen("H2.txt", "a");
+    /* nStacks, nBlocks, depth, steps, queuesize, starting H */
+    fprintf(fp, "%d %d %d %d %d %d\n",
+	    current->state.nStacks,
+	    current->state.nBlocks,
+	    current->depth,
+	    step,
+	    (int)frontier.size(),
+	    start->h);
+    fclose(fp);
+}
+
+/******************************************
  * Main a* search. 
  ******************************************/
 int AStar::search(int maxSteps) {
     step = 0;
+    Node *current = NULL;
     while (!frontier.empty() && step != maxSteps) {
 	// clear children list
 	children.clear();
 	
 	// current node is best in frontier
-	Node *current = frontier.top();
+	current = frontier.top();
 
 	// goal test
 	if (current->state.isSame(goal->state)) {
 	    visited.clear();
 	    std::cout<<"Found goal"<<std::endl;
 	    printSearchState(current);
+	    //printFile(current);
 	    reconstructPath(current);
 	    return step;
 	}
@@ -144,5 +165,8 @@ int AStar::search(int maxSteps) {
 	//printSearchState(current);
 	step++;
     }
+    /*if (current != NULL)
+	printFile(current);
+    */
     return -1;
 }

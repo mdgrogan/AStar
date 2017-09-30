@@ -51,24 +51,23 @@ struct compareNodePtrs {
 class AStar {
     public:
 	void init(State &startState, State &goalState);
-	/* the addChild stuff can and probably should be cleaned up both here
-	   and in BlocksWorld */
-	bool addChild(State &s, int srcStack, int dstStack); 
 	int search(int maxSteps);
+	bool addChild(State &s, int srcStack, int dstStack); 
+    private:
+	Node *newNode();
+	void freeNode(Node *n);
+	bool isBetterPath(Node *n, int tmpG);
 	void reconstructPath(Node *current);
+	void printSearchState(Node *current);
+	void printFile(Node *current);
     
 	Node *start;
 	Node *goal;
 	std::priority_queue<Node*, std::vector<Node*>, compareNodePtrs> frontier;
 	std::vector<Node*> visited;
 	std::vector<Node*> children;
-    private:
-	int step;
-	Node *newNode();
-	void freeNode(Node *n);
-	void printSearchState(Node *current);
-	bool isBetterPath(Node *n, int tmpG);
 	std::vector<Node*> goalPath;
+	int step;
 };
 
 

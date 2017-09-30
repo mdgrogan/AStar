@@ -1,3 +1,4 @@
+#include <time.h>
 #include "Definitions.h"
 
 
@@ -43,7 +44,9 @@ void State::scramble() {
     for (int i=0; i<blockState.size(); i++) {
 	blockState[i].clear();
     }
-    srand(time(0));
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    srand((time_t)ts.tv_nsec);
     for (int i=0; i<nBlocks; i++) {
 	r1 = rand()%nStacks;
 	r2 = rand()%x.size();
@@ -86,11 +89,40 @@ void State::getChildren(AStar *astar) {
 }
 
 /******************************************
- * Heuristic: this one counts blocks 
- * out of place and adds two steps if
- * a lesser block is not at the top of a stack
+ * Heuristic: yikes. This one counts blocks 
+ * out of place. If blocks are out of place 
+ * in the first row
  ******************************************/
 int State::H(State &goalState) {
+    int count = nBlocks;
+    for (int i=0; i<blockState[0].size(); i++) {
+	if (blockState[0][i] == i) {
+	    count--;
+	}
+	else {
+	    count++;
+	}
+    }
+    for (int i=1, maxi=blockState.size(); i<maxi; i++) {
+	for (int j=0, maxj=blockState[i].size(); j<maxj; j++) {
+	    int tmp = 1;
+	    while (j-tmp+1 > 0) {
+		if (blockState[i][j-tmp] < blockState[i][j]) {
+		    count++;
+		}
+		tmp++;
+	    }
+	}
+    }
+    return count;
+}
+/******************************************
+ * Heuristic: this one counts blocks 
+ * out of place and adds a step if we aren't
+ * in the goal stack.
+ ******************************************/
+/* H2
+int State::H2(State &goalState) {
     int count = nBlocks+1;
     for (int i=0; i<blockState[0].size(); i++) {
 	if (blockState[0][i] == i) {
@@ -99,23 +131,16 @@ int State::H(State &goalState) {
     }
     for (int i=1, maxi=blockState.size(); i<maxi; i++) {
 	for (int j=0, maxj=blockState[i].size(); j<maxj; j++) {
-	    if (maxj == 1) {
-		continue;	
-	    }
-	    if (j-1 > 0) {
-		if (blockState[i][j-1] < blockState[i][j]) {
-		    count += 2;
-		}
-	    }
+	    count++;
 	}
     }
     return count;
-}
+}*/
 /******************************************
  * Heuristic: this one just counts blocks 
  * out of place.
  ******************************************/
-/* H1
+/* H1 
 int State::H(State &goalState) {
     int out = nBlocks; // out of place
     for (int i=0; i<blockState[0].size(); i++) {

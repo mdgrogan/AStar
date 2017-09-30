@@ -1,0 +1,274 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.9.29)  30 SEP 2017 01:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/home/grogan/texmf/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip43
+\multirow@cntb=\count87
+\multirow@dima=\skip44
+\bigstrutjot=\dimen103
+)
+(/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\captionmargin=\dimen104
+\captionmargin@=\dimen105
+\captionwidth=\dimen106
+\caption@tempdima=\dimen107
+\caption@indent=\dimen108
+\caption@parindent=\dimen109
+\caption@hangindent=\dimen110
+)
+\c@ContinuedFloat=\count88
+)
+\c@subfigure=\count89
+\c@subtable=\count90
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+) (./report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen113
+\scratchbox=\box26
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen114
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks16
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 55.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (27.97299pt too wide) in paragraph at lines 133--145
+[][] 
+ []
+
+
+Overfull \hbox (121.72322pt too wide) in paragraph at lines 150--164
+[][] 
+ []
+
+<images/H1vsH2_AvgSteps.png, id=15, 455.45157pt x 255.95625pt>
+File: images/H1vsH2_AvgSteps.png Graphic file (type png)
+<use images/H1vsH2_AvgSteps.png>
+Package pdftex.def Info: images/H1vsH2_AvgSteps.png  used on input line 172. on
+ input line 172.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 172.
+<images/H1vsH2_AvgQL.png, id=16, 455.45157pt x 255.95625pt>
+File: images/H1vsH2_AvgQL.png Graphic file (type png)
+<use images/H1vsH2_AvgQL.png>
+Package pdftex.def Info: images/H1vsH2_AvgQL.png  used on input line 177. on in
+put line 177.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 177.
+<images/H1vsH2_AvgRelErr.png, id=17, 455.45157pt x 255.95625pt>
+File: images/H1vsH2_AvgRelErr.png Graphic file (type png)
+<use images/H1vsH2_AvgRelErr.png>
+Package pdftex.def Info: images/H1vsH2_AvgRelErr.png  used on input line 182. o
+n input line 182.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 182.
+<images/H2_AvgStepsVsStacks.png, id=18, 455.45157pt x 255.95625pt>
+File: images/H2_AvgStepsVsStacks.png Graphic file (type png)
+<use images/H2_AvgStepsVsStacks.png>
+Package pdftex.def Info: images/H2_AvgStepsVsStacks.png  used on input line 194
+. on input line 194.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 194.
+<images/H2_AvgQLVsStacks.png, id=19, 455.45157pt x 255.95625pt>
+File: images/H2_AvgQLVsStacks.png Graphic file (type png)
+<use images/H2_AvgQLVsStacks.png>
+Package pdftex.def Info: images/H2_AvgQLVsStacks.png  used on input line 199. o
+n input line 199.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 199.
+<images/H2_AvgRelErrVsStacks.png, id=20, 455.45157pt x 255.95625pt>
+File: images/H2_AvgRelErrVsStacks.png Graphic file (type png)
+<use images/H2_AvgRelErrVsStacks.png>
+Package pdftex.def Info: images/H2_AvgRelErrVsStacks.png  used on input line 20
+4. on input line 204.
+Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
+ 204.
+[3] [4 <./images/H1vsH2_AvgSteps.png (PNG copy)> <./images/H1vsH2_AvgQL.png (PN
+G copy)> <./images/H1vsH2_AvgRelErr.png (PNG copy)>] [5 <./images/H2_AvgStepsVs
+Stacks.png (PNG copy)> <./images/H2_AvgQLVsStacks.png (PNG copy)> <./images/H2_
+AvgRelErrVsStacks.png (PNG copy)>] (./report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2658 strings out of 492990
+ 42201 string characters out of 6138688
+ 102166 words of memory out of 5000000
+ 6204 multiletter control sequences out of 15000+600000
+ 8187 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,9n,40p,310b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/grogan/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmr9.600pk> </hom
+e/grogan/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmcsc10.600pk> </home/gro
+gan/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.600pk> </usr/share/texm
+f-dist/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk> </home/grogan/.texlive/texmf-
+var/fonts/pk/ljfour/public/cm/cmbx12.720pk> </usr/share/texmf-dist/fonts/pk/ljf
+our/public/cm/dpi600/cmr12.pk> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm
+/dpi600/cmr17.pk>
+Output written on report.pdf (5 pages, 158538 bytes).
+PDF statistics:
+ 255 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

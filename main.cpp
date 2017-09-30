@@ -31,7 +31,6 @@ int main(int argc, char **argv) {
     startState.scramble();
     //-------------------------------------------
 
-
     std::cout<<"Goal blockState:"<<std::endl;
     goalState.printState();
 
