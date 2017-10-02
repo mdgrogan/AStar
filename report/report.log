@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.9.30)  2 OCT 2017 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.9.30)  2 OCT 2017 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -247,77 +247,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--161
  []
 
 [2]
-Overfull \hbox (28.17174pt too wide) in paragraph at lines 163--175
-[][] 
- []
 
-
-Overfull \hbox (40.1994pt too wide) in paragraph at lines 180--194
-[][] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 <images/H1vsH2_AvgSteps.png, id=15, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgSteps.png Graphic file (type png)
 <use images/H1vsH2_AvgSteps.png>
-Package pdftex.def Info: images/H1vsH2_AvgSteps.png  used on input line 202. on
- input line 202.
+Package pdftex.def Info: images/H1vsH2_AvgSteps.png  used on input line 208. on
+ input line 208.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 202.
+ 208.
 <images/H1vsH2_AvgQL.png, id=16, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgQL.png Graphic file (type png)
 <use images/H1vsH2_AvgQL.png>
-Package pdftex.def Info: images/H1vsH2_AvgQL.png  used on input line 207. on in
-put line 207.
+Package pdftex.def Info: images/H1vsH2_AvgQL.png  used on input line 213. on in
+put line 213.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 207.
+ 213.
 <images/H1vsH2_AvgRelErr.png, id=17, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgRelErr.png Graphic file (type png)
 <use images/H1vsH2_AvgRelErr.png>
-Package pdftex.def Info: images/H1vsH2_AvgRelErr.png  used on input line 212. o
-n input line 212.
+Package pdftex.def Info: images/H1vsH2_AvgRelErr.png  used on input line 218. o
+n input line 218.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 212.
+ 218.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <images/H2_AvgStepsVsStacks.png, id=18, 455.45157pt x 255.95625pt>
 File: images/H2_AvgStepsVsStacks.png Graphic file (type png)
 <use images/H2_AvgStepsVsStacks.png>
-Package pdftex.def Info: images/H2_AvgStepsVsStacks.png  used on input line 224
-. on input line 224.
+Package pdftex.def Info: images/H2_AvgStepsVsStacks.png  used on input line 230
+. on input line 230.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 224.
+ 230.
 <images/H2_AvgQLVsStacks.png, id=19, 455.45157pt x 255.95625pt>
 File: images/H2_AvgQLVsStacks.png Graphic file (type png)
 <use images/H2_AvgQLVsStacks.png>
-Package pdftex.def Info: images/H2_AvgQLVsStacks.png  used on input line 229. o
-n input line 229.
+Package pdftex.def Info: images/H2_AvgQLVsStacks.png  used on input line 235. o
+n input line 235.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 229.
+ 235.
 <images/H2_AvgRelErrVsStacks.png, id=20, 455.45157pt x 255.95625pt>
 File: images/H2_AvgRelErrVsStacks.png Graphic file (type png)
 <use images/H2_AvgRelErrVsStacks.png>
-Package pdftex.def Info: images/H2_AvgRelErrVsStacks.png  used on input line 23
-4. on input line 234.
+Package pdftex.def Info: images/H2_AvgRelErrVsStacks.png  used on input line 24
+0. on input line 240.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 234.
-[3] [4 <./images/H1vsH2_AvgSteps.png (PNG copy)> <./images/H1vsH2_AvgQL.png (PN
-G copy)> <./images/H1vsH2_AvgRelErr.png (PNG copy)>] [5 <./images/H2_AvgStepsVs
-Stacks.png (PNG copy)> <./images/H2_AvgQLVsStacks.png (PNG copy)> <./images/H2_
-AvgRelErrVsStacks.png (PNG copy)>] [6] (./report.aux) ) 
+ 240.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3] [4] [5 <./images/H1vsH2_AvgSteps.png (PNG copy)> <./images/H1vsH2_AvgQL.png
+ (PNG copy)> <./images/H1vsH2_AvgRelErr.png (PNG copy)>] [6 <./images/H2_AvgSte
+psVsStacks.png (PNG copy)> <./images/H2_AvgQLVsStacks.png (PNG copy)> <./images
+/H2_AvgRelErrVsStacks.png (PNG copy)>] (./report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  2750 strings out of 492990
  44165 string characters out of 6138688
- 104328 words of memory out of 5000000
+ 107328 words of memory out of 5000000
  6269 multiletter control sequences out of 15000+600000
  45895 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,310b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/f
-onts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.e
-nc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-di
-st/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/l
-m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1
-/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb>
-Output written on report.pdf (6 pages, 281496 bytes).
+ 42i,10n,40p,310b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
+nts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx1
+0.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/lm/lmr9.pfb>
+Output written on report.pdf (6 pages, 282881 bytes).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream

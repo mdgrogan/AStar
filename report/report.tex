@@ -133,7 +133,7 @@ this and the fact that my heuristic is not admissible, performance breaks down
 with a small number of large stacks and non-optimal solutions can be produced.
 However, good results are still produced within the belt of 3 stacks and 8
 blocks, 5 stacks and 11 blocks, and 10 stacks with 15 blocks. With these ranges,
-the queue can grow to a substantial size. The size of the queue is related tothe
+the queue can grow to a substantial size. The size of the queue is related to the
 efficiency of the search, obviously, but specifically the number of stacks and
 the number of search steps. The branching factor increases by a factor of
 around the number of stacks and search iterations multiplies this.
@@ -159,43 +159,49 @@ inadmissible heuristic. I believe that to effectively improve performance, I
 might need to restructure my formulation of the problem space, adding relational
 attributes for blocks rather than treating them as numbers in arrays.
 
-\begin{table}
+\section{Figures and Tables}
+
+\begin{table}[h]
+\resizebox{\columnwidth}{!}{
     \begin{tabular}{ @{}|l|l|l|l|l|l|l|l|@{} }
-\hline
-\multicolumn{8}{ |c| }{Heuristic Comparison with 3 Stacks} \\ \hline
-Number of Blocks & H & Depth & Steps & QL & Error & Samples & Failures \\ \hline
-\multirow{2}{*}{3} & H1 & 3.91 & 18.995 & 57.334 & 0.263 & 1000 & 0 \\ 
+    \hline
+    \multicolumn{8}{ |c| }{Heuristic Comparison with 3 Stacks} \\ \hline
+    Number of Blocks & H & Depth & Steps & QL & Error & Samples & Failures \\ \hline
+    \multirow{2}{*}{3} & H1 & 3.91 & 18.995 & 57.334 & 0.263 & 1000 & 0 \\ 
 		    & H2 & 3.855 & 6.042 & 21.202 & 0.011 & 1000 & 0 \\ \hline
-\multirow{2}{*}{4} & H1 & 5.91 & 162.833 & 541.627 & 0.347 & 1000 & 0 \\ 
+    \multirow{2}{*}{4} & H1 & 5.91 & 162.833 & 541.627 & 0.347 & 1000 & 0 \\ 
 		    & H2 & 5.934 & 22.787 & 84.101 & 0.022 & 1000 & 0 \\ \hline
-\multirow{2}{*}{5} & H1 & 7.811 & 1636.75 & 5903.22 & 0.38 & 289 & 4 \\ 
+    \multirow{2}{*}{5} & H1 & 7.811 & 1636.75 & 5903.22 & 0.38 & 289 & 4 \\ 
 		    & H2 & 8.143 & 105.792 & 410.92 & 0.029 & 1000 & 0 \\ \hline
-\end{tabular}
+    \end{tabular}
+}
 \caption{Comparison of a range of parameters. H1 indicates the out-of-place
     heuristic and H2 is outlined above}
 \label{tab:comparison}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
+\resizebox{\columnwidth}{!}{
     \begin{tabular}{ @{}|l|l|l|l|l|l|l|l|@{} }
-\hline
-\multicolumn{8}{ |c| }{Performance Metrics} \\ \hline
-\# Stacks & \# Blocks & Depth & Steps & QL & Error & Samples & Failures \\ \hline
-3 & 3 & 3.855 & 6.042 & 21.202 & 0.011 & 1000 & 0 \\ \hline
-3 & 4 & 5.934 & 22.787 & 84.101 & 0.022 & 1000 & 0 \\ \hline
-3 & 5 & 8.143 & 105.792 & 410.92 & 0.029 & 1000 & 0 \\ \hline
-4 & 5 & 6.926 & 47.614 & 346.335 &0.008 & 1000 & 0 \\ \hline
-5 & 5 & 6.405 & 39.675 & 449.017 & 0.001 & 1000 & 0 \\ \hline
-5 & 10 & 15.185 & 689.407 & 10863.44 & -0.012 & 30 & 4\\ \hline
-6 & 5 & 6.199 & 42.819 & 651.251 & -4.76E-05 & 1000 & 0 \\ \hline
-10 & 10 & 12.552 & 132.862 & 7910.103 & -0.034 & 60 & 2\\ \hline
-10 & 15 & 9.965 & 158.827 & 11239.24 & -0.023 & 30 & 1\\ \hline
-\end{tabular}
+    \hline
+    \multicolumn{8}{ |c| }{Performance Metrics} \\ \hline
+    \# Stacks & \# Blocks & Depth & Steps & QL & Error & Samples & Failures \\ \hline
+    3 & 3 & 3.855 & 6.042 & 21.202 & 0.011 & 1000 & 0 \\ \hline
+    3 & 4 & 5.934 & 22.787 & 84.101 & 0.022 & 1000 & 0 \\ \hline
+    3 & 5 & 8.143 & 105.792 & 410.92 & 0.029 & 1000 & 0 \\ \hline
+    4 & 5 & 6.926 & 47.614 & 346.335 &0.008 & 1000 & 0 \\ \hline
+    5 & 5 & 6.405 & 39.675 & 449.017 & 0.001 & 1000 & 0 \\ \hline
+    5 & 10 & 15.185 & 689.407 & 10863.44 & -0.012 & 30 & 4\\ \hline
+    6 & 5 & 6.199 & 42.819 & 651.251 & -4.76E-05 & 1000 & 0 \\ \hline
+    10 & 10 & 12.552 & 132.862 & 7910.103 & -0.034 & 60 & 2\\ \hline
+    10 & 15 & 9.965 & 158.827 & 11239.24 & -0.023 & 30 & 1\\ \hline
+    \end{tabular}
+}
 \caption{Comparison of a range of performance metrics for hueristic}
 \label{tab:heuristic}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}{\linewidth}
 	\centering
@@ -217,7 +223,7 @@ Number of Blocks & H & Depth & Steps & QL & Error & Samples & Failures \\ \hline
     \label{fig:comparison}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{subfigure}{\linewidth}
 	\centering
