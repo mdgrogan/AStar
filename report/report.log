@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.9.30)  30 SEP 2017 01:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.9.30)  2 OCT 2017 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -226,104 +226,101 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 31.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 56.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 56.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 56.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--64
-
+Overfull \hbox (2.08308pt too wide) in paragraph at lines 44--51
+\OT1/lmr/m/n/10 We have been tasked with im-ple-ment-ing an A* search so-lu-tio
+n to the Blocksworld
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (27.97174pt too wide) in paragraph at lines 134--146
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 84.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 84.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--161
+
+ []
+
+[2]
+Overfull \hbox (28.17174pt too wide) in paragraph at lines 163--175
 [][] 
  []
 
 
-Overfull \hbox (121.72139pt too wide) in paragraph at lines 151--165
+Overfull \hbox (40.1994pt too wide) in paragraph at lines 180--194
 [][] 
  []
 
-<images/H1vsH2_AvgSteps.png, id=14, 455.45157pt x 255.95625pt>
+<images/H1vsH2_AvgSteps.png, id=15, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgSteps.png Graphic file (type png)
 <use images/H1vsH2_AvgSteps.png>
-Package pdftex.def Info: images/H1vsH2_AvgSteps.png  used on input line 173. on
- input line 173.
+Package pdftex.def Info: images/H1vsH2_AvgSteps.png  used on input line 202. on
+ input line 202.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 173.
-<images/H1vsH2_AvgQL.png, id=15, 455.45157pt x 255.95625pt>
+ 202.
+<images/H1vsH2_AvgQL.png, id=16, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgQL.png Graphic file (type png)
 <use images/H1vsH2_AvgQL.png>
-Package pdftex.def Info: images/H1vsH2_AvgQL.png  used on input line 178. on in
-put line 178.
+Package pdftex.def Info: images/H1vsH2_AvgQL.png  used on input line 207. on in
+put line 207.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 178.
-<images/H1vsH2_AvgRelErr.png, id=16, 455.45157pt x 255.95625pt>
+ 207.
+<images/H1vsH2_AvgRelErr.png, id=17, 455.45157pt x 255.95625pt>
 File: images/H1vsH2_AvgRelErr.png Graphic file (type png)
 <use images/H1vsH2_AvgRelErr.png>
-Package pdftex.def Info: images/H1vsH2_AvgRelErr.png  used on input line 183. o
-n input line 183.
+Package pdftex.def Info: images/H1vsH2_AvgRelErr.png  used on input line 212. o
+n input line 212.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 183.
-<images/H2_AvgStepsVsStacks.png, id=17, 455.45157pt x 255.95625pt>
+ 212.
+<images/H2_AvgStepsVsStacks.png, id=18, 455.45157pt x 255.95625pt>
 File: images/H2_AvgStepsVsStacks.png Graphic file (type png)
 <use images/H2_AvgStepsVsStacks.png>
-Package pdftex.def Info: images/H2_AvgStepsVsStacks.png  used on input line 195
-. on input line 195.
+Package pdftex.def Info: images/H2_AvgStepsVsStacks.png  used on input line 224
+. on input line 224.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 195.
-<images/H2_AvgQLVsStacks.png, id=18, 455.45157pt x 255.95625pt>
+ 224.
+<images/H2_AvgQLVsStacks.png, id=19, 455.45157pt x 255.95625pt>
 File: images/H2_AvgQLVsStacks.png Graphic file (type png)
 <use images/H2_AvgQLVsStacks.png>
-Package pdftex.def Info: images/H2_AvgQLVsStacks.png  used on input line 200. o
-n input line 200.
+Package pdftex.def Info: images/H2_AvgQLVsStacks.png  used on input line 229. o
+n input line 229.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 200.
-<images/H2_AvgRelErrVsStacks.png, id=19, 455.45157pt x 255.95625pt>
+ 229.
+<images/H2_AvgRelErrVsStacks.png, id=20, 455.45157pt x 255.95625pt>
 File: images/H2_AvgRelErrVsStacks.png Graphic file (type png)
 <use images/H2_AvgRelErrVsStacks.png>
-Package pdftex.def Info: images/H2_AvgRelErrVsStacks.png  used on input line 20
-5. on input line 205.
+Package pdftex.def Info: images/H2_AvgRelErrVsStacks.png  used on input line 23
+4. on input line 234.
 Package pdftex.def Info: Requested size: 224.2479pt x 126.02501pt on input line
- 205.
+ 234.
 [3] [4 <./images/H1vsH2_AvgSteps.png (PNG copy)> <./images/H1vsH2_AvgQL.png (PN
 G copy)> <./images/H1vsH2_AvgRelErr.png (PNG copy)>] [5 <./images/H2_AvgStepsVs
 Stacks.png (PNG copy)> <./images/H2_AvgQLVsStacks.png (PNG copy)> <./images/H2_
-AvgRelErrVsStacks.png (PNG copy)>] (./report.aux) ) 
+AvgRelErrVsStacks.png (PNG copy)>] [6] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2748 strings out of 492990
- 44141 string characters out of 6138688
- 102328 words of memory out of 5000000
- 6268 multiletter control sequences out of 15000+600000
- 42949 words of font info for 39 fonts, out of 8000000 for 9000
+ 2750 strings out of 492990
+ 44165 string characters out of 6138688
+ 104328 words of memory out of 5000000
+ 6269 multiletter control sequences out of 15000+600000
+ 45895 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,40p,310b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts
-/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}<
-/usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/f
-onts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
-mr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/tex
-mf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmr9.pfb>
-Output written on report.pdf (5 pages, 256571 bytes).
+{/usr/share/texmf-dist/f
+onts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.e
+nc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-di
+st/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/l
+m/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1
+/public/lm/lmr17.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb>
+Output written on report.pdf (6 pages, 281496 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

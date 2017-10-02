@@ -41,27 +41,36 @@
 
 \section{Overview}
 
-We have been tasked with implementing an A* search solution to the Blocks World
-problem. For simplicity's sake, I have replaced letters A, B, etc. with numbers
-1, 2, etc. 
+We have been tasked with implementing an A* search solution to the Blocksworld
+problem.In this version of Blocksworld, we must arrange a finite number of blocks on a finite
+number of stacks such that the blocks are placed in ascending order on the first
+stack. To facilitate ordering, each block is given a label such as A or B and
+each stack is numbered. The last block on any given stack can be moved to the
+last position on any other stack. For simplicity's sake, I have replaced letters 
+A, B, etc. with numbers 1, 2, etc. 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-\section{Heuristic}
-\subsection{Description}
-The heuristic I have constructed can be expressed as follows:\\\\
-\hspace*{1cm}\textsc{Set count = \# of blocks}\\
-\hspace*{1cm}\textsc{\underline{For} each block in stack one, do:}\\
-\hspace*{2cm}\textsc{\underline{if} block is in position, decrement count}\\
-\hspace*{2cm}\textsc{\underline{else}, increment count}\\
-\hspace*{1cm}\textsc{\underline{For} each stack past stack one, do:}\\
-\hspace*{2cm}\textsc{\underline{For} each block in this stack, do:}\\
-\hspace*{3cm}\textsc{\underline{For} each sub-block under this top-block,do:}\\
-\hspace*{4cm}\textsc{\underline{if} sub-block < top-block, increment count}\\
-\hspace*{1cm}\textsc{return count}\\\\
+\section{Implementation}
+\subsection{A*}
 
+My implementation of A* and Blocksworld is written in C++. I use three
+classes:
+\begin{enumerate}
+    \item A state class containg stack and block information as well as member
+	functions for moving and evaluating current block configurations.
+    \item A node class which contains a parent pointer, a state class variable,
+	and a path cost estimate.
+    \item An A* search class containing a frontier priority queue, visited list,
+	and the search algorithm.
+\end{enumerate}
+
+\subsection{Heuristic}
+\subsubsection{Description}
+
+The heuristic I have constructed is presented below.
 We start our move counter with the number of blocks in the problem. We check the
 first stack and decrement the counter for each block in place. This gives us a
 simple number-of-blocks-out-of-place heuristic. But we know that each block out
@@ -71,7 +80,19 @@ each of the blocks underneath it. If the current block is the larger of the
 comparison, we know that it must be moved to free up the burried block and we
 increment the move count.
 
-\subsection{Admissibility}
+\hspace*{1cm}\textsc{Set count = \# of blocks}\\
+\hspace*{1cm}\textsc{\underline{For} each block in stack one, do:}\\
+\hspace*{2cm}\textsc{\underline{if} block is in position, decrement count}\\
+\hspace*{2cm}\textsc{\underline{else}, increment count}\\
+\hspace*{1cm}\textsc{\underline{For} each stack past stack one, do:}\\
+\hspace*{2cm}\textsc{\underline{For} each block in this stack, do:}\\
+\hspace*{3cm}\textsc{\underline{For} each sub-block under this top-block,do:}\\
+\hspace*{4cm}\textsc{\underline{if} sub-block < top-block, increment count}\\
+\hspace*{1cm}\textsc{return count}
+
+
+
+\subsubsection{Admissibility}
 
 This heuristic is not admissible. Consider a case such as\\
 \textsc{1 :}\\
@@ -119,19 +140,27 @@ around the number of stacks and search iterations multiplies this.
 When the number of stacks is increased, as in Figure~\ref{fig:heuristic} the 
 heuristic performs better in terms of search time. This is due to the fact that 
 more available stacks allow blocks to be rearranged without creating conflicts
-for another block. One possible heuristic that I considered was one which
+for another block.\\\\ 
+One possible heuristic that I considered was one which
 considered the relationships between blocks and when what at first appears to be
 a conflict actually lies along the optimal solution path. That direction seemed
 to be an endless expansion of corner cases and the relatively simple heuristic
-which I settled on generally outperformed a relationship based approach. My
-heuristic could, however, be improved by 'improving' admissibility. This would
+which I settled on generally outperformed a more complicated approaches. My
+heuristic could, however, be stregnthened by 'improving' admissibility. This would
 involve accounting for the case outlined above when the blocks are arranged in
-nearly reverse order on non-goal stacks. As can be seen in
+nearly reverse order on non-goal stacks. Since my heuristic punishes large
+stacks, immediately succesful moves may be overlooked in the interest of
+reducing a stack. This is highly troublesome on problems with high block to
+stack ratios. As can be seen in
 Table~\ref{tab:heuristic}, the relative error becomes negative for large numbers
-of blocks indicating a consistent overestimate of cost.
+of blocks indicating a consistent overestimate of cost. Interestingly,
+underestimating heuristics which I worked on were outperformed by the
+inadmissible heuristic. I believe that to effectively improve performance, I
+might need to restructure my formulation of the problem space, adding relational
+attributes for blocks rather than treating them as numbers in arrays.
 
 \begin{table}
-\begin{tabular}{ |l|l|l|l|l|l|l|l| }
+    \begin{tabular}{ @{}|l|l|l|l|l|l|l|l|@{} }
 \hline
 \multicolumn{8}{ |c| }{Heuristic Comparison with 3 Stacks} \\ \hline
 Number of Blocks & H & Depth & Steps & QL & Error & Samples & Failures \\ \hline
@@ -148,19 +177,19 @@ Number of Blocks & H & Depth & Steps & QL & Error & Samples & Failures \\ \hline
 \end{table}
 
 \begin{table}
-\begin{tabular}{ |l|l|l|l|l|l|l|l| }
+    \begin{tabular}{ @{}|l|l|l|l|l|l|l|l|@{} }
 \hline
 \multicolumn{8}{ |c| }{Performance Metrics} \\ \hline
-Number of Stacks & Number of Blocks & Depth & Steps & QL & Error & Samples & Failures \\ \hline
+\# Stacks & \# Blocks & Depth & Steps & QL & Error & Samples & Failures \\ \hline
 3 & 3 & 3.855 & 6.042 & 21.202 & 0.011 & 1000 & 0 \\ \hline
 3 & 4 & 5.934 & 22.787 & 84.101 & 0.022 & 1000 & 0 \\ \hline
 3 & 5 & 8.143 & 105.792 & 410.92 & 0.029 & 1000 & 0 \\ \hline
 4 & 5 & 6.926 & 47.614 & 346.335 &0.008 & 1000 & 0 \\ \hline
 5 & 5 & 6.405 & 39.675 & 449.017 & 0.001 & 1000 & 0 \\ \hline
-5 & 10 & 15.185 & 689.407 & 10863.444 & -0.012 & 30 & 4\\ \hline
+5 & 10 & 15.185 & 689.407 & 10863.44 & -0.012 & 30 & 4\\ \hline
 6 & 5 & 6.199 & 42.819 & 651.251 & -4.76E-05 & 1000 & 0 \\ \hline
 10 & 10 & 12.552 & 132.862 & 7910.103 & -0.034 & 60 & 2\\ \hline
-10 & 15 & 9.965 & 158.827 & 11239.241 & -0.023 & 30 & 1\\ \hline
+10 & 15 & 9.965 & 158.827 & 11239.24 & -0.023 & 30 & 1\\ \hline
 \end{tabular}
 \caption{Comparison of a range of performance metrics for hueristic}
 \label{tab:heuristic}
