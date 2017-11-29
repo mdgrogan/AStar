@@ -101,10 +101,11 @@ This heuristic is not admissible. Consider a case such as\\
 In this case, the heuristic returns a value of 6 when the optimal solution is
 in only 5 moves. Even in this case, the heuristic guides us towards the correct
 solution by encouraging proper ordering and avoidance of the first row for
-incorrect blocks. The above case is not particularly likely and for smaller
-values (e.g. 3 stacks and 5 blocks). It becomes more prominant with larger
-numbers of blocks in proportion to stacks as this results in generally lasrger
-stacks.
+incorrect blocks. For such a configuration, the heuristic still leads to a
+solution in the minimum of 5 steps. In fact, for low values (e.g. 3 stacks 
+and 5 blocks), a solution is typically arrived at within 100 search steps. 
+Overestimation becomes more prominant with larger numbers of blocks in proportion 
+to stacks as this results in generally lasrger stacks.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 3
